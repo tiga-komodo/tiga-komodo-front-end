@@ -8,7 +8,7 @@ import ProductList from "./components/ProductList";
 import Details from "./components/Details";
 import Default from "./components/Default";
 import Cart from "./components/Cart";
-import LoginRegister from "./components/LoginRegister";
+import LoginRegister from "./components/login-register/LoginRegister";
 import Modal from "./components/Modal";
 // import Homepage from "./components/Homepage";
 

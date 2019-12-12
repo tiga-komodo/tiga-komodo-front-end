@@ -25,6 +25,7 @@ class ProductProvider extends Component {
       const singleItem = { ...item };
       products = [...products, singleItem];
     });
+
     this.setState(() => {
       return { products };
     }, this.checkCartItems);
@@ -44,6 +45,7 @@ class ProductProvider extends Component {
 
   addToCart = id => {
     let tempProducts = [...this.state.products];
+    console.log(tempProducts);
     const index = tempProducts.indexOf(this.getItem(id));
     const product = tempProducts[index];
     product.inCart = true;
