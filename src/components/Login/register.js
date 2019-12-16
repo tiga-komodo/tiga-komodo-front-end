@@ -17,11 +17,11 @@ class Register extends React.Component {
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="text" name="email" placeholder="email" />
+              <input type="text" name="email" placeholder="Enter email" />
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="password" name="password" placeholder="username" />
+              <input type="password" name="password" placeholder="Enter Password" />
             </div>
           </div>
         </div>
