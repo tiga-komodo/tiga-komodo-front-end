@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Product from "./Product";
 import Title from "./Title";
-import Homepage from "./Homepage";
 
 import { storeProducts } from "../data";
 
@@ -14,7 +13,6 @@ export default class ProductList extends Component {
   render() {
     return (
       <React.Fragment>
-        <Homepage />
         <div className="container">
           <Title name="Product" />
           <div className="row">

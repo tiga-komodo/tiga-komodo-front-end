@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.scss";
 
 class Register extends React.Component {
@@ -26,9 +27,11 @@ class Register extends React.Component {
           </div>
         </div>
         <div className="footer">
-          <button type="button" className="btn">
-            Register
-          </button>
+          <Link to="/productlist">
+            <button type="button" className="btn">
+              Register
+            </button>
+          </Link>
         </div>
       </div>
     );
