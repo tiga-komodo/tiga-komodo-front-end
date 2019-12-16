@@ -1,8 +1,6 @@
 import React from "react";
 
 export default function Default(props) {
-  console.log(this.props);
-
   return (
     <div className="container">
       <div className="row">
@@ -12,7 +10,7 @@ export default function Default(props) {
           <h2>page not found</h2>
           <h3>
             the requested URL{" "}
-            <span classname="text-danger">
+            <span className="text-danger">
               "{this.props.location.pathname}"
             </span>
             was not found

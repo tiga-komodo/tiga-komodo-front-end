@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.scss";
 
 class Login extends React.Component {
@@ -22,9 +23,11 @@ class Login extends React.Component {
           </div>
         </div>
         <div className="footer">
-          <button type="button" className="btn">
-            Login
-          </button>
+          <Link to="/productlist">
+            <button type="button" className="btn">
+              Login
+            </button>
+          </Link>
         </div>
       </div>
     );

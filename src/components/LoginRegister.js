@@ -1,8 +1,6 @@
 import React from "react";
-import Login from "../Login/login";
-import Register from "../Login/register";
-
-import "./LoginRegister.scss";
+import Login from "./Login/login";
+import Register from "./Login/register";
 
 class LoginRegister extends React.Component {
   constructor(props) {
@@ -32,7 +30,7 @@ class LoginRegister extends React.Component {
   render() {
     const { isLogginActive } = this.state;
     const current = isLogginActive ? "Register" : "Login";
-    const currentActive = isLogginActive ? "login" : "register";
+    const currentActive = isLogginActive ? "Login" : "Register";
     return (
       <div className="App">
         <div className="login">

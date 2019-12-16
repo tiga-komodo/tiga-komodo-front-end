@@ -8,9 +8,13 @@ import ProductList from "./components/ProductList";
 import Details from "./components/Details";
 import Default from "./components/Default";
 import Cart from "./components/Cart";
-import LoginRegister from "./components/login-register/LoginRegister";
+import LoginRegister from "./components/LoginRegister";
 import Modal from "./components/Modal";
-// import Homepage from "./components/Homepage";
+import NewRelease from "../src/components/NewRelease/NewRelease";
+import Issue from "../src/components/Issue/Issue";
+import Trend from "../src/components/Trend/Trend";
+import Lifestyle from "../src/components/Lifestyle/Lifestyle";
+import Homepage from "../src/components/Homepage/Homepage";
 
 class App extends Component {
   render() {
@@ -18,10 +22,15 @@ class App extends Component {
       <React.Fragment>
         <Navbar />
         <Switch>
-          <Route exact path="/" component={ProductList} />
+          <Route exact path="/" component={Homepage} />
+          <Route path="/productlist" component={ProductList} />
           <Route path="/details" component={Details} />
           <Route path="/cart" component={Cart} />
           <Route path="/login" component={LoginRegister} />
+          <Route path="/newrelease" component={NewRelease} />
+          <Route path="/issue" component={Issue} />
+          <Route path="/trend" component={Trend} />
+          <Route path="/lifestyle" component={Lifestyle} />
           <Route component={Default} />
         </Switch>
         <Modal />
