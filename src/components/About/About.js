@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./style.scss";
-import Avatar from "../../assets/images/avatar.png";
+import Hasbi from "../../assets/images/hasbi.JPG";
+import Iman from "../../assets/images/iman.JPG";
+import Iqbal from "../../assets/images/iqbal.jpg";
 
 export default class About extends Component {
   render() {
@@ -10,7 +12,7 @@ export default class About extends Component {
           <h1>Meet Our Team</h1>
           <div className="pers">
             <div className="pe">
-              <img src={Avatar} alt="" />
+              <img src={Hasbi} alt="" />
               <div className="p-name">Hasbi</div>
               <div className="p-des">Full Stack Developer</div>
               <div className="p-sm">
@@ -26,7 +28,7 @@ export default class About extends Component {
               </div>
             </div>
             <div className="pe">
-              <img src={Avatar} alt="" />
+              <img src={Iman} alt="" />
               <div className="p-name">Iman</div>
               <div className="p-des">Full Stack Developer</div>
               <div className="p-sm">
@@ -42,7 +44,7 @@ export default class About extends Component {
               </div>
             </div>
             <div className="pe">
-              <img src={Avatar} alt="" />
+              <img src={Iqbal} alt="" />
               <div className="p-name">Iqbal</div>
               <div className="p-des">Full Stack Developer</div>
               <div className="p-sm">

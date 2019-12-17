@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./style.scss";
-import Avatar from "../../assets/images/avatar.png";
+import Customer1 from "../../assets/images/customer-1.jpg";
+import Customer2 from "../../assets/images/customer-2.jpg";
+import Customer3 from "../../assets/images/customer-3.jpg";
 
 export default class Testimonial extends Component {
   render() {
@@ -14,7 +16,7 @@ export default class Testimonial extends Component {
             <div className="row">
               <div className="col">
                 <div className="testimonial">
-                  <img src={Avatar} alt="" />
+                  <img src={Customer1} alt="" />
                   <div className="name">Customer 1</div>
                   <div className="star">
                     <i className="fas fa-star"></i>
@@ -33,7 +35,7 @@ export default class Testimonial extends Component {
               </div>
               <div className="col">
                 <div className="testimonial">
-                  <img src={Avatar} alt="" />
+                  <img src={Customer2} alt="" />
                   <div className="name">Customer 2</div>
                   <div className="star">
                     <i className="fas fa-star"></i>
@@ -52,7 +54,7 @@ export default class Testimonial extends Component {
               </div>
               <div className="col">
                 <div className="testimonial">
-                  <img src={Avatar} alt="" />
+                  <img src={Customer3} alt="" />
                   <div className="name">Customer 3</div>
                   <div className="star">
                     <i className="fas fa-star"></i>
