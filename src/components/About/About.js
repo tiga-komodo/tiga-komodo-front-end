@@ -23,8 +23,8 @@ export default class About extends Component {
                 <div className="p-name">Hasbi</div>
                 <div className="p-des">Full Stack Developer</div>
                 <div className="p-sm">
-                  <a href={`https://www.facebook.com/khasbullah.zakin`}>
-                    <i className="fab fa-facebook-f"></i>
+                  <a href={`https://github.com/Zakintaliban`}>
+                    <i className="fab fa-github"></i>
                   </a>
                   <a href={`https://twitter.com/Zakintaliban`}>
                     <i className="fab fa-twitter"></i>
@@ -39,13 +39,13 @@ export default class About extends Component {
                 <div className="p-name">Iman</div>
                 <div className="p-des">Full Stack Developer</div>
                 <div className="p-sm">
-                  <a href={`/`}>
-                    <i className="fab fa-facebook-f"></i>
+                  <a href={`https://github.com/imanardiansyahh`}>
+                    <i className="fab fa-github"></i>
                   </a>
-                  <a href={`/`}>
+                  <a href={`https://twitter.com/imanardiansyahh`}>
                     <i className="fab fa-twitter"></i>
                   </a>
-                  <a href={`/`}>
+                  <a href={`https://www.instagram.com/imanardiansyahh`}>
                     <i className="fab fa-instagram"></i>
                   </a>
                 </div>
@@ -55,13 +55,13 @@ export default class About extends Component {
                 <div className="p-name">Iqbal</div>
                 <div className="p-des">Full Stack Developer</div>
                 <div className="p-sm">
-                  <a href={`/`}>
-                    <i className="fab fa-facebook-f"></i>
+                  <a href={`https://github.com/iqbalelyas`}>
+                    <i className="fab fa-github"></i>
                   </a>
-                  <a href={`/`}>
+                  <a href={`https://twitter.com`}>
                     <i className="fab fa-twitter"></i>
                   </a>
-                  <a href={`/`}>
+                  <a href={`https://www.instagram.com`}>
                     <i className="fab fa-instagram"></i>
                   </a>
                 </div>
@@ -73,7 +73,6 @@ export default class About extends Component {
         <div className="team-section">
           <div className="inner-width">
             <h1>Technology we use</h1>
-
             <div class="container">
               <div class="row align-items-center">
                 <div class="col-sm">
