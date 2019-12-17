@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Switch } from "react-router-dom";
-
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProductList from "./components/ProductList";
@@ -21,7 +17,7 @@ import Lifestyle from "./components/Lifestyle/Lifestyle";
 import Homepage from "./components/Homepage/Homepage";
 import Testimonial from "./components/Testimonial/Testimonial";
 import About from "./components/About/About";
-// import Ourservices from "./components/Ourservice/ourservices"
+// import newHomePage from "./components/newHomePage";
 
 import { PrivateRoute } from "./helpers/privateRoute";
 class App extends Component {
@@ -70,8 +66,6 @@ class App extends Component {
         </Switch>
 
         <Modal />
-        <About/>
-        {/* <Ourservices/> */}
         <Footer />
       </React.Fragment>
     );

@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 
-import logo from "../logo.svg";
+import logo from "../assets/images/logo.png";
 import { clientAuth } from "../helpers/auth";
 
 export default function Navbar() {
@@ -14,7 +14,7 @@ export default function Navbar() {
         Commons (Attribution 3.0 Unported);
         https://www.iconfinder.com/Makoto_msk */}
       <Link to="/">
-        <img src={logo} alt="store" className="navbar-brand" />
+        <img src={logo} alt="store" className="navbar-brand" width="50" />
       </Link>
       <ul className="navbar-nav align-items-center">
         {clientAuth.isAuthenticated ? (
@@ -61,6 +61,7 @@ const NavWrapper = styled.nav`
   @media (max-width: 576px) {
     .navbar-nav {
       flex-direction: row !important;
+
     }
   }
 `;

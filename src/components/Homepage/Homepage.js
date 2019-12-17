@@ -14,25 +14,25 @@ export default class Homepage extends Component {
         <section className="container">
           <div className="row">
             <div className="col-sm-6">
-              <p className="up" align="center">New Release</p>
+              <p>New Release</p>
               <Link to="/newrelease">
                 <img src={newrelease} alt="" />
               </Link>
             </div>
             <div className="col-sm-6">
-              <p className="up" align="center">Issue</p>
+              <p>Issue</p>
               <Link to="/issue">
                 <img src={issue} alt="" />
               </Link>
             </div>
             <div className="col-sm-6">
-              <p className="up" align="center">Trend</p>
+              <p>Trend</p>
               <Link to="/trend">
                 <img src={trend} alt="" />
               </Link>
             </div>
             <div className="col-sm-6">
-              <p className="up" align="center">Lifestyle</p>
+              <p>Lifestyle</p>
               <Link to="/lifestyle">
                 <img src={lifestyle} alt="" />
               </Link>
