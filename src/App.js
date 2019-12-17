@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -14,6 +17,7 @@ import NewRelease from "../src/components/NewRelease/NewRelease";
 import Issue from "../src/components/Issue/Issue";
 import Trend from "../src/components/Trend/Trend";
 import Lifestyle from "../src/components/Lifestyle/Lifestyle";
+import abouts from "./components/About/abouts"
 import Homepage from "../src/components/Homepage/Homepage";
 
 class App extends Component {
@@ -30,10 +34,12 @@ class App extends Component {
           <Route path="/newrelease" component={NewRelease} />
           <Route path="/issue" component={Issue} />
           <Route path="/trend" component={Trend} />
+          <Route path="/abouts" component={abouts} />
           <Route path="/lifestyle" component={Lifestyle} />
           <Route component={Default} />
         </Switch>
         <Modal />
+        <abouts/>
         <Footer />
       </React.Fragment>
     );
