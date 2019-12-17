@@ -1,24 +1,38 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
-import logo from "../logo.svg";
 
-export default class Navbar extends Component {
-  render() {
-    return (
-      <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
-        {/* /https://www.iconfinder.com/icons/1243689/call_phone_icon Creative
+import logo from "../logo.svg";
+import { clientAuth } from "../helpers/auth";
+
+export default function Navbar() {
+  let history = useHistory();
+
+  return (
+    <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
+      {/* /https://www.iconfinder.com/icons/1243689/call_phone_icon Creative
         Commons (Attribution 3.0 Unported);
         https://www.iconfinder.com/Makoto_msk */}
-        <Link to="/">
-          <img src={logo} alt="store" className="navbar-brand" />
-        </Link>
-        <ul className="navbar-nav align-items-center">
+      <Link to="/">
+        <img src={logo} alt="store" className="navbar-brand" />
+      </Link>
+      <ul className="navbar-nav align-items-center">
+        {clientAuth.isAuthenticated ? (
+          <li
+            className="nav-item active"
+            onClick={() => {
+              clientAuth.signout(() => history.push("/"));
+            }}
+          >
+            Logout
+          </li>
+        ) : (
           <li className="nav-item active">
             <Link to="/login" className="nav-link">
               Login
             </Link>
           </li>
+<<<<<<< HEAD
           <li className="nav-item active">
             <Link to="/productlist" className="nav-link">
               Product
@@ -36,6 +50,25 @@ export default class Navbar extends Component {
       </NavWrapper>
     );
   }
+=======
+        )}
+        <li className="nav-item active">
+          <Link to="/productlist" className="nav-link">
+            Product
+          </Link>
+        </li>
+        <li>
+          <Link to="/about" className="nav-link">
+            About
+          </Link>
+        </li>
+      </ul>
+      <Link to="/cart" className="ml-auto">
+        <i class="fas fa-shopping-cart"></i>
+      </Link>
+    </NavWrapper>
+  );
+>>>>>>> 1c5b8d550007820320c30f7ef6691ff86f177ac0
 }
 
 const NavWrapper = styled.nav`
