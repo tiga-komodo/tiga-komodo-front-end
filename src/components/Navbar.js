@@ -23,6 +23,7 @@ export default function Navbar() {
             onClick={() => {
               clientAuth.signout(() => history.push("/"));
             }}
+            style={{ color: "#fff", textDecoration: "none" }}
           >
             Logout
           </li>
