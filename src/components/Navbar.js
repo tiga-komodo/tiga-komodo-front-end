@@ -14,7 +14,7 @@ export default function Navbar() {
         Commons (Attribution 3.0 Unported);
         https://www.iconfinder.com/Makoto_msk */}
       <Link to="/">
-        <img src={logo} alt="store" className="navbar-brand" />
+        <img src={logo} alt="store" className="navbar-brand" width="50" />
       </Link>
       <ul className="navbar-nav align-items-center">
         {clientAuth.isAuthenticated ? (
