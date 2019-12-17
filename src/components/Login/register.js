@@ -49,13 +49,6 @@ class Register extends React.Component {
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-<<<<<<< HEAD
-              <input type="text" name="email" placeholder="Enter email" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input type="password" name="password" placeholder="Enter Password" />
-=======
               <input
                 type="text"
                 name="email"
@@ -73,7 +66,6 @@ class Register extends React.Component {
                 value={password}
                 onChange={this.handleChange}
               />
->>>>>>> 1c5b8d550007820320c30f7ef6691ff86f177ac0
             </div>
           </div>
         </div>

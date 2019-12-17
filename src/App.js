@@ -21,6 +21,7 @@ import Lifestyle from "./components/Lifestyle/Lifestyle";
 import Homepage from "./components/Homepage/Homepage";
 import Testimonial from "./components/Testimonial/Testimonial";
 import About from "./components/About/About";
+// import Ourservices from "./components/Ourservice/ourservices"
 
 import { PrivateRoute } from "./helpers/privateRoute";
 class App extends Component {
@@ -69,7 +70,8 @@ class App extends Component {
         </Switch>
 
         <Modal />
-        <abouts/>
+        <About/>
+        {/* <Ourservices/> */}
         <Footer />
       </React.Fragment>
     );

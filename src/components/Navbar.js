@@ -32,25 +32,6 @@ export default function Navbar() {
               Login
             </Link>
           </li>
-<<<<<<< HEAD
-          <li className="nav-item active">
-            <Link to="/productlist" className="nav-link">
-              Product
-            </Link>
-          </li>
-          <li className="nav-item active">
-          <Link to="/aboutUs" className="nav-link">
-          About Us
-          </Link>
-          </li>
-        </ul>
-        <Link to="/cart" className="ml-auto">
-          <i class="fas fa-shopping-cart"></i>
-        </Link>
-      </NavWrapper>
-    );
-  }
-=======
         )}
         <li className="nav-item active">
           <Link to="/productlist" className="nav-link">
@@ -68,7 +49,6 @@ export default function Navbar() {
       </Link>
     </NavWrapper>
   );
->>>>>>> 1c5b8d550007820320c30f7ef6691ff86f177ac0
 }
 
 const NavWrapper = styled.nav`
