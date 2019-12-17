@@ -5,7 +5,7 @@ import newrelease from "../../assets/images/newrelease.jpg";
 import issue from "../../assets/images/issue.jpeg";
 import trend from "../../assets/images/trend.jpg";
 import lifestyle from "../../assets/images/lifestyle.jpg";
-import ProductList from "../ProductList";
+import Testimonial from "../Testimonial/Testimonial";
 
 export default class Homepage extends Component {
   render() {
@@ -40,7 +40,7 @@ export default class Homepage extends Component {
           </div>
           <div className="row text-center"></div>
         </section>
-        <ProductList />
+        <Testimonial />
       </React.Fragment>
     );
   }
