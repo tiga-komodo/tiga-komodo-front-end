@@ -1,17 +1,43 @@
 import React, { Component } from "react";
-import PayPalButton from "./PayPalButton";
-import { Link } from "react-router-dom";
-export default class CartTotals extends Component {
+import axios from "axios";
+// import PayPalButton from "./PayPalButton";
+import { Link, withRouter } from "react-router-dom";
+import { BACKEND_URI } from "../../helpers/env";
+
+class CartTotals extends Component {
   render() {
     const {
       cartSubTotal,
       cartTax,
       cartTotal,
       cart,
-      clearCart
+      clearCart,
+      user
     } = this.props.value;
     const { history } = this.props;
     const emptyCart = cart.length === 0 ? true : false;
+
+    const order = {
+      userId: user._id,
+      products: cart,
+      total: cartTotal
+    };
+
+    const handlePayment = () => {
+      axios
+        .post(BACKEND_URI + "/orders", order)
+        .then(result => {
+          console.log(result);
+          clearCart();
+          history.push("/");
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    };
+
+    console.log(this.props);
+    console.log(order);
     return (
       <React.Fragment>
         {!emptyCart && (
@@ -41,11 +67,7 @@ export default class CartTotals extends Component {
                   <span className="text-title"> total :</span>{" "}
                   <strong>$ {cartTotal} </strong>
                 </h5>
-                <PayPalButton
-                  totalAmount={cartTotal}
-                  clearCart={clearCart}
-                  history={history}
-                />
+                <button onClick={handlePayment}>Payment</button>
               </div>
             </div>
           </div>
@@ -54,3 +76,9 @@ export default class CartTotals extends Component {
     );
   }
 }
+
+export default withRouter(CartTotals);
+
+// totalAmount={cartTotal}
+//                   clearCart={clearCart}
+//                   history={history}

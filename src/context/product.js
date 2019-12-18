@@ -7,6 +7,7 @@ const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
   state = {
+    user: {},
     products: [],
     detailProduct: {},
     cart: [],
@@ -20,6 +21,15 @@ class ProductProvider extends Component {
   componentDidMount() {
     this.setProducts();
   }
+
+  addUser = data => {
+    let newUser = data;
+    this.setState(() => {
+      return {
+        user: newUser
+      };
+    });
+  };
 
   setProducts = () => {
     // let products = [];
@@ -195,6 +205,7 @@ class ProductProvider extends Component {
       <ProductContext.Provider
         value={{
           ...this.state,
+          addUser: this.addUser,
           handleDetail: this.handleDetail,
           addToCart: this.addToCart,
           openModal: this.openModal,

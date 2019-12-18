@@ -1,6 +1,7 @@
 import React from "react";
 import Login from "./Login/login";
 import Register from "./Login/register";
+import { ProductConsumer } from "../context/product";
 
 class LoginRegister extends React.Component {
   constructor(props) {
@@ -32,24 +33,31 @@ class LoginRegister extends React.Component {
     const current = isLogginActive ? "Register" : "Login";
     const currentActive = isLogginActive ? "Login" : "Register";
     return (
-      <div className="App">
-        <div className="login">
-          <div className="container" ref={ref => (this.container = ref)}>
-            {isLogginActive && (
-              <Login containerRef={ref => (this.current = ref)} />
-            )}
-            {!isLogginActive && (
-              <Register containerRef={ref => (this.current = ref)} />
-            )}
+      <ProductConsumer>
+        {value => (
+          <div className="App">
+            <div className="login">
+              <div className="container" ref={ref => (this.container = ref)}>
+                {isLogginActive && (
+                  <Login
+                    value={value}
+                    containerRef={ref => (this.current = ref)}
+                  />
+                )}
+                {!isLogginActive && (
+                  <Register containerRef={ref => (this.current = ref)} />
+                )}
+              </div>
+              <RightSide
+                current={current}
+                currentActive={currentActive}
+                containerRef={ref => (this.rightSide = ref)}
+                onClick={this.changeState.bind(this)}
+              />
+            </div>
           </div>
-          <RightSide
-            current={current}
-            currentActive={currentActive}
-            containerRef={ref => (this.rightSide = ref)}
-            onClick={this.changeState.bind(this)}
-          />
-        </div>
-      </div>
+        )}
+      </ProductConsumer>
     );
   }
 }
