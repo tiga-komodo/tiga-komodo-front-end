@@ -35,7 +35,9 @@ class Product extends React.Component {
   // }
 
   render() {
-    const { id, title, img, price, inCart } = this.props.product;
+    const { _id, title, img, price, inCart } = this.props.product;
+    console.log(this.props.product);
+
     return (
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
@@ -44,7 +46,9 @@ class Product extends React.Component {
               return (
                 <div
                   className="img-container p-5"
-                  onClick={() => value.handleDetail(id)}
+                  onClick={() => {
+                    value.handleDetail(_id);
+                  }}
                 >
                   <Link to="/details">
                     <img src={img} alt="" className="card-img-top" />
@@ -53,8 +57,8 @@ class Product extends React.Component {
                     className="cart-btn"
                     disabled={inCart ? true : false}
                     onClick={() => {
-                      value.addToCart(id);
-                      value.openModal(id);
+                      value.addToCart(_id);
+                      value.openModal(_id);
                     }}
                   >
                     {inCart ? (

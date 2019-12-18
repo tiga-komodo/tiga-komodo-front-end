@@ -10,7 +10,7 @@ class Details extends Component {
       <ProductConsumer>
         {value => {
           const {
-            id,
+            _id,
             company,
             img,
             info,
@@ -21,18 +21,15 @@ class Details extends Component {
 
           return (
             <div className="container py-5">
-              {/* title */}
               <div className="row">
                 <div className="col-10 mx-auto text-center text-slanted text-blue my-5">
                   <h1>{title}</h1>
                 </div>
               </div>
-              {/* end of title */}
               <div className="row">
                 <div className="col-10 mx-auto col-md-6 my-3">
                   <img src={img} className="img-fluid" alt="" />
                 </div>
-                {/* prdoduct info */}
                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
                   <h1>model : {title}</h1>
                   <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
@@ -48,7 +45,6 @@ class Details extends Component {
                     some info about product :
                   </p>
                   <p className="text-muted lead">{info}</p>
-                  {/* buttons */}
                   <div>
                     <Link to="/">
                       <ButtonContainer>back to products</ButtonContainer>
@@ -58,8 +54,8 @@ class Details extends Component {
                       disabled={inCart ? true : false}
                       onClick={() => {
                         if (clientAuth.isAuthenticated) {
-                          value.addToCart(id);
-                          value.openModal(id);
+                          value.addToCart(_id);
+                          value.openModal(_id);
                         } else {
                           this.props.history.push("/login");
                         }

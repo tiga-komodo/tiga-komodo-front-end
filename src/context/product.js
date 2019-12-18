@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { storeProducts, detailProduct } from "../data";
+// import { storeProducts, detailProduct } from "../data";
 import { BACKEND_URI } from "../helpers/env";
 
 const ProductContext = React.createContext();
@@ -8,10 +8,10 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
   state = {
     products: [],
-    detailProduct: detailProduct,
+    detailProduct: {},
     cart: [],
     modalOpen: false,
-    modalProduct: detailProduct,
+    modalProduct: {},
     cartSubTotal: 0,
     cartTax: 0,
     cartTotal: 0
@@ -52,7 +52,7 @@ class ProductProvider extends Component {
   };
 
   getItem = id => {
-    const product = this.state.products.find(item => item.id === id);
+    const product = this.state.products.find(item => item._id === id);
     return product;
   };
 
@@ -97,7 +97,7 @@ class ProductProvider extends Component {
   increment = id => {
     let tempCart = [...this.state.cart];
     const selectedProduct = tempCart.find(item => {
-      return item.id === id;
+      return item._id === id;
     });
 
     const index = tempCart.indexOf(selectedProduct);
@@ -113,7 +113,7 @@ class ProductProvider extends Component {
   decrement = id => {
     let tempCart = [...this.state.cart];
     const selectedProduct = tempCart.find(item => {
-      return item.id === id;
+      return item._id === id;
     });
 
     const index = tempCart.indexOf(selectedProduct);
@@ -167,7 +167,7 @@ class ProductProvider extends Component {
     removedProduct.total = 0;
 
     tempCart = tempCart.filter(item => {
-      return item.id !== id;
+      return item._id !== id;
     });
 
     this.setState(() => {
