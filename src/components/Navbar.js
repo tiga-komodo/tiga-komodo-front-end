@@ -14,7 +14,7 @@ export default function Navbar() {
         Commons (Attribution 3.0 Unported);
         https://www.iconfinder.com/Makoto_msk */}
       <Link to="/">
-        <img src={logo} alt="store" className="navbar-brand" />
+        <img src={logo} alt="store" className="navbar-brand" width="50" />
       </Link>
       <ul className="navbar-nav align-items-center">
         {clientAuth.isAuthenticated ? (
@@ -46,6 +46,12 @@ export default function Navbar() {
             About
           </Link>
         </li>
+          <li>
+            <Link to="/ContactUs" className="nav-link">Contact Us</Link>
+          </li>
+
+
+
       </ul>
       <Link to="/cart" className="ml-auto">
         <i className="fas fa-shopping-cart"></i>
@@ -64,6 +70,7 @@ const NavWrapper = styled.nav`
   @media (max-width: 576px) {
     .navbar-nav {
       flex-direction: row !important;
+
     }
   }
 `;
