@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import newrealease from "../assets/images/newrealease.jpg";
-import issue from "../assets/images/issue.jpeg";
-import trend from "../assets/images/trend.jpg";
-import lifestyle from "../assets/images/lifestyle.jpg";
 
 export default class Homepage extends Component {
   render() {
@@ -17,7 +13,7 @@ export default class Homepage extends Component {
               </div>
             </div>
           </section> */}
-          <section className="container">
+          {/* <section className="container">
             <div className="row">
               <div className="col-sm-6">
                 <p>New Release</p>
@@ -37,7 +33,7 @@ export default class Homepage extends Component {
               </div>
             </div>
             <div className="row text-center"></div>
-          </section>
+          </section> */}
         </DivWrapper>
       </React.Fragment>
     );

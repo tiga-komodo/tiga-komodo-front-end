@@ -10,16 +10,15 @@ import Default from "./components/Default";
 import Cart from "./components/Cart";
 import LoginRegister from "./components/LoginRegister";
 import Modal from "./components/Modal";
-import NewRelease from "./components/NewRelease/NewRelease";
-import Issue from "./components/Issue/Issue";
-import Trend from "./components/Trend/Trend";
-import Lifestyle from "./components/Lifestyle/Lifestyle";
+// import NewRelease from "./components/NewRelease/NewRelease";
+// import Issue from "./components/Issue/Issue";
+// import Trend from "./components/Trend/Trend";
+// import Lifestyle from "./components/Lifestyle/Lifestyle";
 import Homepage from "./components/Homepage/Homepage";
 import Testimonial from "./components/Testimonial/Testimonial";
 import About from "./components/About/About";
 import ProductForm from "./components/Admin";
-// import Outservice from "./components/Ourservice/ourservices"
-import ContactUs from "./components/contactUs/contactUs"
+import ContactUs from "./components/contactUs/contactUs";
 import { PrivateRoute } from "./helpers/privateRoute";
 class App extends Component {
   render() {
@@ -40,18 +39,18 @@ class App extends Component {
           <Route path="/cart">
             <Cart />
           </Route>
-          <Route path="/newrelease">
+          {/* <Route path="/newrelease">
             <NewRelease />
-          </Route>
-          <Route path="/issue">
+          </Route> */}
+          {/* <Route path="/issue">
             <Issue />
-          </Route>
-          <Route path="/trend">
+          </Route> */}
+          {/* <Route path="/trend">
             <Trend />
           </Route>
           <Route path="/lifestyle">
             <Lifestyle />
-          </Route>
+          </Route> */}
           <Route path="/testimonial">
             <Testimonial />
           </Route>
@@ -62,7 +61,7 @@ class App extends Component {
             <ProductList />
           </Route>
           <Route path="/ContactUs">
-          <ContactUs/>
+            <ContactUs />
           </Route>
           <PrivateRoute path="/admin/add-product">
             <ProductForm />
@@ -70,12 +69,9 @@ class App extends Component {
           <Route>
             <Default />
           </Route>
-        
         </Switch>
-
         <Modal />
-        {/* <Outservice/> */}
-    <Footer />
+        <Footer />
       </React.Fragment>
     );
   }
