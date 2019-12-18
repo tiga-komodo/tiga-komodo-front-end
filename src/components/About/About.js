@@ -8,8 +8,9 @@ import Css from "../../assets/images/css.svg";
 import Express from "../../assets/images/express-109.svg";
 import Html from "../../assets/images/html-5.svg";
 import Javascript from "../../assets/images/javascript.svg";
-import NMM from "../../assets/images/node-mongoose-mongodb.png";
-
+import Mongodb from "../../assets/images/mongodb.svg";
+import Mongoose from "../../assets/images/mongoose_logo.svg";
+import Nodejs from "../../assets/images/nodejs.svg";
 export default class About extends Component {
   render() {
     return (
@@ -79,7 +80,13 @@ export default class About extends Component {
                   <img src={Express} alt="" width="100" height="150" />
                 </div>
                 <div class="col-sm">
-                  <img src={NMM} alt="" width="700" height="100" />
+                  <img src={Mongodb} alt="" width="100" height="150" />
+                </div>
+                <div class="col-sm">
+                  <img src={Mongoose} alt="" width="100" height="150" />
+                </div>
+                <div class="col-sm">
+                  <img src={Nodejs} alt="" width="100" height="40" />
                 </div>
               </div>
               <div class="row align-items-center">
