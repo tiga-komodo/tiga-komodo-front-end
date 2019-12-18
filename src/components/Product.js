@@ -1,10 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../context/product";
+// import { BACKEND_URI } from "../helpers/env";
+// import axios from "axios";
 import PropTypes from "prop-types";
 
-export default class Product extends Component {
+class Product extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     products: [],
+  //     isLoaded: false,
+  //     error: ""
+  //   };
+  // }
+
+  // componentDidMount() {
+  //   axios
+  //     .get(BACKEND_URI + "/products")
+  //     .then(result => {
+  //       this.setState({
+  //         isLoaded: true,
+  //         products: result.data
+  //       });
+  //       console.log(result);
+  //     })
+  //     .catch(error => {
+  //       this.setState({
+  //         isLoaded: true,
+  //         error: error.message
+  //       });
+  //     });
+  // }
+
   render() {
     const { id, title, img, price, inCart } = this.props.product;
     return (
@@ -52,6 +81,8 @@ export default class Product extends Component {
     );
   }
 }
+
+export default Product;
 
 Product.propTypes = {
   product: PropTypes.shape({

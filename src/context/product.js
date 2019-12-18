@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import axios from "axios";
 import { storeProducts, detailProduct } from "../data";
+import { BACKEND_URI } from "../helpers/env";
 
 const ProductContext = React.createContext();
 
@@ -20,15 +22,33 @@ class ProductProvider extends Component {
   }
 
   setProducts = () => {
-    let products = [];
-    storeProducts.forEach(item => {
-      const singleItem = { ...item };
-      products = [...products, singleItem];
-    });
+    // let products = [];
+    // storeProducts.forEach(item => {
+    //   const singleItem = { ...item };
+    //   products = [...products, singleItem];
+    // });
 
-    this.setState(() => {
-      return { products };
-    }, this.checkCartItems);
+    // this.setState(() => {
+    //   return { products };
+    // }, this.checkCartItems);
+
+    axios
+      .get(BACKEND_URI + "/products")
+      .then(result => {
+        this.setState({
+          // isLoaded: true,
+          products: result.data
+        });
+        // console.log(result);
+      })
+      .catch(error => {
+        console.log(error);
+
+        // this.setState({
+        // isLoaded: true,
+        // error: error.message
+        // });
+      });
   };
 
   getItem = id => {

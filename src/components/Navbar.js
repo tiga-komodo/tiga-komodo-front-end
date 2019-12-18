@@ -18,15 +18,17 @@ export default function Navbar() {
       </Link>
       <ul className="navbar-nav align-items-center">
         {clientAuth.isAuthenticated ? (
-          <li
-            className="nav-item active"
-            onClick={() => {
-              clientAuth.signout(() => history.push("/"));
-            }}
-            style={{ color: "#fff", textDecoration: "none" }}
-          >
-            Logout
-          </li>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <li
+              className="nav-item active"
+              onClick={() => {
+                clientAuth.signout(() => history.push("/"));
+              }}
+              style={{ color: "#fff" }}
+            >
+              Logout
+            </li>
+          </Link>
         ) : (
           <li className="nav-item active">
             <Link to="/login" className="nav-link">
@@ -46,7 +48,7 @@ export default function Navbar() {
         </li>
       </ul>
       <Link to="/cart" className="ml-auto">
-        <i class="fas fa-shopping-cart"></i>
+        <i className="fas fa-shopping-cart"></i>
       </Link>
     </NavWrapper>
   );
