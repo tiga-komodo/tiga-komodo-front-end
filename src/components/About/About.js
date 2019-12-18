@@ -74,9 +74,9 @@ export default class About extends Component {
         <div className="team-section">
           <div className="inner-width">
             <h1>Technology we use</h1>
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-sm">
+            <div className="container">
+              <div className="row align-items-center">
+                <div className="col-sm">
                   <img src={Express} alt="" width="100" height="150" />
                 </div>
                 <div class="col-sm">
@@ -89,17 +89,17 @@ export default class About extends Component {
                   <img src={Nodejs} alt="" width="100" height="40" />
                 </div>
               </div>
-              <div class="row align-items-center">
-                <div class="col-sm">
+              <div className="row align-items-center">
+                <div className="col-sm">
                   <img src={Bootstrap} alt="" width="100" height="100" />
                 </div>
-                <div class="col-sm">
+                <div className="col-sm">
                   <img src={Html} alt="" width="100" height="100" />
                 </div>
-                <div class="col-sm">
+                <div className="col-sm">
                   <img src={Css} alt="" width="100" height="100" />
                 </div>
-                <div class="col-sm">
+                <div className="col-sm">
                   <img src={Javascript} alt="" width="100" height="100" />
                 </div>
               </div>

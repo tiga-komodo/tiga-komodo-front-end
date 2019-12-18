@@ -1,12 +1,43 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../context/product";
+// import { BACKEND_URI } from "../helpers/env";
+// import axios from "axios";
 import PropTypes from "prop-types";
 
-export default class Product extends Component {
+class Product extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     products: [],
+  //     isLoaded: false,
+  //     error: ""
+  //   };
+  // }
+
+  // componentDidMount() {
+  //   axios
+  //     .get(BACKEND_URI + "/products")
+  //     .then(result => {
+  //       this.setState({
+  //         isLoaded: true,
+  //         products: result.data
+  //       });
+  //       console.log(result);
+  //     })
+  //     .catch(error => {
+  //       this.setState({
+  //         isLoaded: true,
+  //         error: error.message
+  //       });
+  //     });
+  // }
+
   render() {
-    const { id, title, img, price, inCart } = this.props.product;
+    const { _id, title, img, price, inCart } = this.props.product;
+    console.log(this.props.product);
+
     return (
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
@@ -15,7 +46,9 @@ export default class Product extends Component {
               return (
                 <div
                   className="img-container p-5"
-                  onClick={() => value.handleDetail(id)}
+                  onClick={() => {
+                    value.handleDetail(_id);
+                  }}
                 >
                   <Link to="/details">
                     <img src={img} alt="" className="card-img-top" />
@@ -24,8 +57,8 @@ export default class Product extends Component {
                     className="cart-btn"
                     disabled={inCart ? true : false}
                     onClick={() => {
-                      value.addToCart(id);
-                      value.openModal(id);
+                      value.addToCart(_id);
+                      value.openModal(_id);
                     }}
                   >
                     {inCart ? (
@@ -52,6 +85,8 @@ export default class Product extends Component {
     );
   }
 }
+
+export default Product;
 
 Product.propTypes = {
   product: PropTypes.shape({

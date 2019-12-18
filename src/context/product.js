@@ -1,15 +1,17 @@
 import React, { Component } from "react";
-import { storeProducts, detailProduct } from "../data";
+import axios from "axios";
+// import { storeProducts, detailProduct } from "../data";
+import { BACKEND_URI } from "../helpers/env";
 
 const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
   state = {
     products: [],
-    detailProduct: detailProduct,
+    detailProduct: {},
     cart: [],
     modalOpen: false,
-    modalProduct: detailProduct,
+    modalProduct: {},
     cartSubTotal: 0,
     cartTax: 0,
     cartTotal: 0
@@ -20,19 +22,37 @@ class ProductProvider extends Component {
   }
 
   setProducts = () => {
-    let products = [];
-    storeProducts.forEach(item => {
-      const singleItem = { ...item };
-      products = [...products, singleItem];
-    });
+    // let products = [];
+    // storeProducts.forEach(item => {
+    //   const singleItem = { ...item };
+    //   products = [...products, singleItem];
+    // });
 
-    this.setState(() => {
-      return { products };
-    }, this.checkCartItems);
+    // this.setState(() => {
+    //   return { products };
+    // }, this.checkCartItems);
+
+    axios
+      .get(BACKEND_URI + "/products")
+      .then(result => {
+        this.setState({
+          // isLoaded: true,
+          products: result.data
+        });
+        // console.log(result);
+      })
+      .catch(error => {
+        console.log(error);
+
+        // this.setState({
+        // isLoaded: true,
+        // error: error.message
+        // });
+      });
   };
 
   getItem = id => {
-    const product = this.state.products.find(item => item.id === id);
+    const product = this.state.products.find(item => item._id === id);
     return product;
   };
 
@@ -77,7 +97,7 @@ class ProductProvider extends Component {
   increment = id => {
     let tempCart = [...this.state.cart];
     const selectedProduct = tempCart.find(item => {
-      return item.id === id;
+      return item._id === id;
     });
 
     const index = tempCart.indexOf(selectedProduct);
@@ -93,7 +113,7 @@ class ProductProvider extends Component {
   decrement = id => {
     let tempCart = [...this.state.cart];
     const selectedProduct = tempCart.find(item => {
-      return item.id === id;
+      return item._id === id;
     });
 
     const index = tempCart.indexOf(selectedProduct);
@@ -147,7 +167,7 @@ class ProductProvider extends Component {
     removedProduct.total = 0;
 
     tempCart = tempCart.filter(item => {
-      return item.id !== id;
+      return item._id !== id;
     });
 
     this.setState(() => {
