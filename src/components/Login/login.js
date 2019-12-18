@@ -6,6 +6,8 @@ import { clientAuth } from "../../helpers/auth";
 import { BACKEND_URI } from "../../helpers/env";
 import "./style.scss";
 
+const HEROKU_API = process.env.REACT_APP_BACKEND_URI;
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +26,7 @@ class Login extends React.Component {
     });
 
     axios
-      .post(BACKEND_URI + "/users/authenticated", this.state)
+      .post(HEROKU_API + "/users/authenticated", this.state)
       .then(result => {
         clientAuth.authenticate(() => {
           this.setState({

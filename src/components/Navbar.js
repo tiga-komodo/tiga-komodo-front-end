@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 
-import logo from "../assets/images/logo.png";
+import logo from "../logo.svg";
 import { clientAuth } from "../helpers/auth";
 
 export default function Navbar() {
@@ -23,6 +23,7 @@ export default function Navbar() {
             onClick={() => {
               clientAuth.signout(() => history.push("/"));
             }}
+            style={{ color: "#fff", textDecoration: "none" }}
           >
             Logout
           </li>
@@ -43,6 +44,12 @@ export default function Navbar() {
             About
           </Link>
         </li>
+          <li>
+            <Link to="/ContactUs" className="nav-link">Contact Us</Link>
+          </li>
+
+
+
       </ul>
       <Link to="/cart" className="ml-auto">
         <i class="fas fa-shopping-cart"></i>

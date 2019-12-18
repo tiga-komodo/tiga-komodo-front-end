@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { ProductConsumer } from "../context/product";
 import { ButtonContainer } from "./Button";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import { clientAuth } from "../helpers/auth";
 
-export default class Details extends Component {
+class Details extends Component {
   render() {
     return (
       <ProductConsumer>
@@ -56,8 +57,12 @@ export default class Details extends Component {
                       cart
                       disabled={inCart ? true : false}
                       onClick={() => {
-                        value.addToCart(id);
-                        value.openModal(id);
+                        if (clientAuth.isAuthenticated) {
+                          value.addToCart(id);
+                          value.openModal(id);
+                        } else {
+                          this.props.history.push("/login");
+                        }
                       }}
                     >
                       {inCart ? "in cart" : "add to cart"}
@@ -72,3 +77,5 @@ export default class Details extends Component {
     );
   }
 }
+
+export default withRouter(Details);

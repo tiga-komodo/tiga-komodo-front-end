@@ -17,8 +17,9 @@ import Lifestyle from "./components/Lifestyle/Lifestyle";
 import Homepage from "./components/Homepage/Homepage";
 import Testimonial from "./components/Testimonial/Testimonial";
 import About from "./components/About/About";
-// import newHomePage from "./components/newHomePage";
-
+import ProductForm from "./components/Admin";
+// import Outservice from "./components/Ourservice/ourservices"
+import ContactUs from "./components/contactUs/contactUs"
 import { PrivateRoute } from "./helpers/privateRoute";
 class App extends Component {
   render() {
@@ -57,16 +58,24 @@ class App extends Component {
           <Route path="/about">
             <About />
           </Route>
-          <PrivateRoute path="/productlist">
+          <Route path="/productlist">
             <ProductList />
+          </Route>
+          <Route path="/ContactUs">
+          <ContactUs/>
+          </Route>
+          <PrivateRoute path="/admin/add-product">
+            <ProductForm />
           </PrivateRoute>
           <Route>
             <Default />
           </Route>
+        
         </Switch>
 
         <Modal />
-        <Footer />
+        {/* <Outservice/> */}
+    <Footer />
       </React.Fragment>
     );
   }
