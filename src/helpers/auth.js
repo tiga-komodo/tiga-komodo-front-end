@@ -1,5 +1,5 @@
 export const clientAuth = {
-  isAuthenticated: false,
+  isAuthenticated: true,
   authenticate(cb) {
     clientAuth.isAuthenticated = true;
     setTimeout(cb, 2000);
