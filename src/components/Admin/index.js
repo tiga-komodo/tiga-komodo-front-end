@@ -11,7 +11,7 @@ import {
 import axios from "axios";
 import { BACKEND_URI } from "../../helpers/env";
 
-const HEROKU_API = process.env.REACT_APP_BACKEND_URI;
+// const HEROKU_API = process.env.REACT_APP_BACKEND_URI;
 
 export default function ProductForm() {
   const [product, setProduct] = useState({
@@ -38,7 +38,7 @@ export default function ProductForm() {
     console.log(product);
 
     axios
-      .post(HEROKU_API + "/products", product)
+      .post(BACKEND_URI + "/products", product)
       .then(result => console.log(result))
       .catch(error => console.log(error));
   };

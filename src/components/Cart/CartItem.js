@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class CartItem extends Component {
   render() {
-    const { id, title, img, price, total, count } = this.props.item;
+    const { _id, title, img, price, total, count } = this.props.item;
     const { increment, decrement, removeItem } = this.props.value;
 
     return (
@@ -27,14 +27,14 @@ export default class CartItem extends Component {
             <div>
               <span
                 className="btn btn-black mx-1"
-                onClick={() => decrement(id)}
+                onClick={() => decrement(_id)}
               >
                 -
               </span>
               <span className="btn btn-black mx-1">{count}</span>
               <span
                 className="btn btn-black mx-1"
-                onClick={() => increment(id)}
+                onClick={() => increment(_id)}
               >
                 +
               </span>
@@ -43,7 +43,7 @@ export default class CartItem extends Component {
         </div>
         {/* */}
         <div className="col-10 mx-auto col-lg-2">
-          <div className="cart-icon" onClick={() => removeItem(id)}>
+          <div className="cart-icon" onClick={() => removeItem(_id)}>
             <i className="fas fa-trash"></i>
           </div>
         </div>

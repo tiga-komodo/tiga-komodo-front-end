@@ -4,9 +4,10 @@ import axios from "axios";
 import { clientAuth } from "../../helpers/auth";
 
 import { BACKEND_URI } from "../../helpers/env";
+
 import "./style.scss";
 
-const HEROKU_API = process.env.REACT_APP_BACKEND_URI;
+// const HEROKU_API = process.env.REACT_APP_BACKEND_URI;
 
 class Login extends React.Component {
   constructor(props) {
@@ -26,8 +27,10 @@ class Login extends React.Component {
     });
 
     axios
-      .post(HEROKU_API + "/users/authenticated", this.state)
+      .post(BACKEND_URI + "/users/authenticated", this.state)
       .then(result => {
+        console.log(result);
+        this.props.value.addUser(result.data.result);
         clientAuth.authenticate(() => {
           this.setState({
             status: "Login Sucess",
@@ -55,6 +58,7 @@ class Login extends React.Component {
     const { location, history } = this.props;
     const { name, password, isLoading, error } = this.state;
     let { from } = location.state || { from: { pathname: "/" } };
+    console.log(this.props);
 
     return (
       <div className="base-container" ref={this.props.containerRef}>
