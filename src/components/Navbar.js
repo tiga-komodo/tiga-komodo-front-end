@@ -14,7 +14,7 @@ export default function Navbar() {
         Commons (Attribution 3.0 Unported);
         https://www.iconfinder.com/Makoto_msk */}
       <Link to="/">
-        <img src={logo} alt="store" className="navbar-brand" width="50" />
+        <img src={logo} alt="store" className="navbar-brand" />
       </Link>
       <ul className="navbar-nav align-items-center">
         {clientAuth.isAuthenticated ? (
@@ -31,7 +31,7 @@ export default function Navbar() {
           </Link>
         ) : (
           <li className="nav-item active">
-            <Link to="/login" className="nav-link">
+            <Link to="/login&register" className="nav-link">
               Login
             </Link>
           </li>
@@ -61,18 +61,20 @@ export default function Navbar() {
 
 const NavWrapper = styled.nav`
   background: var(--mainBlack);
-  .nav-link{
+  .nav-link {
     color: var(--mainWhite) !important;
     font-size: 1rem;
     text-transform: capitalize !important;
   }
-  
 
-  .nav-link:hover{
-    color: #ffa801 !important;
+  .navbar-brand {
+    width: 75px;
+    padding: 0;
   }
 
-
+  .nav-link:hover {
+    color: #ffa801 !important;
+  }
 
   @media (max-width: 576px) {
     .navbar-nav {

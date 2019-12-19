@@ -57,7 +57,7 @@ class Details extends Component {
                           value.addToCart(_id);
                           value.openModal(_id);
                         } else {
-                          this.props.history.push("/login");
+                          this.props.history.push("/login&register");
                         }
                       }}
                     >
