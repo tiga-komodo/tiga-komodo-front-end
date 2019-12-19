@@ -11,7 +11,9 @@ export default class contactUs extends Component {
       name: "",
       email: "",
       phoneNumber: "",
-      message: ""
+      message: "",
+      status: "",
+      error: ""
     };
   }
 
@@ -23,15 +25,27 @@ export default class contactUs extends Component {
 
   sendMessage = event => {
     event.preventDefault();
+    const { status, error, ...bodyMessage } = this.state;
     axios
-      .post(BACKEND_URI + "/users/contact-us", this.state)
+      .post(BACKEND_URI + "/users/contact-us", bodyMessage)
       .then(result => {
-        console.log(result);
+        this.setState({
+          name: "",
+          email: "",
+          phoneNumber: "",
+          message: "",
+          status: result.data.message
+        });
       })
-      .then(() => {
-        this.setState({ name: "", email: "", phoneNumber: "", message: "" });
-      })
-      .catch(error => console.log(error));
+      .catch(error => {
+        if (error) {
+          if (error.response) {
+            this.setState({ error: error.response.data.message });
+          } else {
+            this.setState({ error: error.message });
+          }
+        }
+      });
   };
 
   render() {
@@ -41,6 +55,12 @@ export default class contactUs extends Component {
           <div className="contact-section">
             <h1>Contact Us</h1>
             <div className="border"></div>
+            {this.state.error && (
+              <h1 style={{ position: "absolute" }}>{this.state.error}</h1>
+            )}
+            {this.state.status && (
+              <h1 style={{ position: "absolute" }}>{this.state.status}</h1>
+            )}
             <form className="contact-form" onSubmit={this.sendMessage}>
               <input
                 type="text"
