@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ProductConsumer } from "../context/product";
-// import { BACKEND_URI } from "../helpers/env";
-// import axios from "axios";
 import PropTypes from "prop-types";
+
+import { ProductConsumer } from "../context/product";
+import { clientAuth } from "../helpers/auth";
 
 class Product extends React.Component {
   render() {
     const { _id, title, img, price, inCart } = this.props.product;
-    console.log(this.props.product);
 
     return (
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
@@ -26,22 +25,52 @@ class Product extends React.Component {
                   <Link to="/details">
                     <img src={img} alt="" className="card-img-top" />
                   </Link>
-                  <button
-                    className="cart-btn"
-                    disabled={inCart ? true : false}
-                    onClick={() => {
-                      value.addToCart(_id);
-                      value.openModal(_id);
-                    }}
-                  >
-                    {inCart ? (
-                      <p className="text-capitalize mb-0" disabled>
-                        in cart
-                      </p>
-                    ) : (
-                      <i className="fas fa-cart-plus" />
-                    )}
-                  </button>
+
+                  {clientAuth.isAuthenticated ? (
+                    <React.Fragment>
+                      <button
+                        className="cart-btn"
+                        disabled={inCart ? true : false}
+                        onClick={() => {
+                          value.addToCart(_id);
+                          value.openModal(_id);
+                        }}
+                      >
+                        {inCart ? (
+                          <p className="text-capitalize mb-0" disabled>
+                            in cart
+                          </p>
+                        ) : (
+                          <i className="fas fa-cart-plus" />
+                        )}
+                      </button>
+                      <button
+                        className="cart-btn"
+                        disabled={inCart ? true : false}
+                        onClick={() => {
+                          value.addToCart(_id);
+                          value.openModal(_id);
+                        }}
+                      >
+                        {inCart ? (
+                          <p className="text-capitalize mb-0" disabled>
+                            in cart
+                          </p>
+                        ) : (
+                          <i className="fas fa-cart-plus" />
+                        )}
+                      </button>
+                    </React.Fragment>
+                  ) : (
+                    <button
+                      className="cart-btn"
+                      onClick={() => {
+                        alert("You have to login first");
+                      }}
+                    >
+                      <i className="fas fa-cart-plus" />{" "}
+                    </button>
+                  )}
                 </div>
               );
             }}

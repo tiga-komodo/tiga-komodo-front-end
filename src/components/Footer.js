@@ -37,13 +37,32 @@ export default class Footer extends Component {
             <h5>Follow Us</h5>
             <ul className="list-unstyled text-small">
               <li>
-                <i className="fab fa-facebook"></i>
+                {" "}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://facebook.com"
+                >
+                  <i className="fab fa-facebook"></i>
+                </a>
               </li>
               <li>
-                <i className="fab fa-instagram"></i>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://instagram.com"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
               </li>
               <li>
-                <i className="fab fa-twitter"></i>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://twitter.com"
+                >
+                  <i className="fab fa-twitter"></i>
+                </a>
               </li>
             </ul>
           </div>

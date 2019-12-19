@@ -36,6 +36,7 @@ export default class Modal extends Component {
                           Continue Shopping
                         </ButtonContainer>
                       </Link>
+
                       <Link to="/cart">
                         <ButtonContainer
                           cart

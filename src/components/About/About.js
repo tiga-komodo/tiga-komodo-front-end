@@ -24,13 +24,25 @@ export default class About extends Component {
                 <div className="p-name">Hasbi</div>
                 <div className="p-des">Full Stack Developer</div>
                 <div className="p-sm">
-                  <a href={`https://github.com/Zakintaliban`}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`https://github.com/Zakintaliban`}
+                  >
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href={`https://twitter.com/Zakintaliban`}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`https://twitter.com/Zakintaliban`}
+                  >
                     <i className="fab fa-twitter"></i>
                   </a>
-                  <a href={`https://www.instagram.com/hasbi_zakin/`}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`https://www.instagram.com/hasbi_zakin/`}
+                  >
                     <i className="fab fa-instagram"></i>
                   </a>
                 </div>
@@ -40,13 +52,25 @@ export default class About extends Component {
                 <div className="p-name">Iman</div>
                 <div className="p-des">Full Stack Developer</div>
                 <div className="p-sm">
-                  <a href={`https://github.com/imanardiansyahh`}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`https://github.com/imanardiansyahh`}
+                  >
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href={`https://twitter.com/imanardiansyahh`}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`https://twitter.com/imanardiansyahh`}
+                  >
                     <i className="fab fa-twitter"></i>
                   </a>
-                  <a href={`https://www.instagram.com/imanardiansyahh`}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`https://www.instagram.com/imanardiansyahh`}
+                  >
                     <i className="fab fa-instagram"></i>
                   </a>
                 </div>
@@ -56,13 +80,25 @@ export default class About extends Component {
                 <div className="p-name">Iqbal</div>
                 <div className="p-des">Full Stack Developer</div>
                 <div className="p-sm">
-                  <a href={`https://github.com/iqbalelyas`}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`https://github.com/iqbalelyas`}
+                  >
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href={`https://twitter.com`}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`https://twitter.com`}
+                  >
                     <i className="fab fa-twitter"></i>
                   </a>
-                  <a href={`https://www.instagram.com`}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`https://www.instagram.com`}
+                  >
                     <i className="fab fa-instagram"></i>
                   </a>
                 </div>
@@ -77,30 +113,79 @@ export default class About extends Component {
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-sm">
-                  <img src={Express} alt="" width="100" height="150" />
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://expressjs.com/"
+                  >
+                    <img src={Express} alt="" width="100" height="150" />
+                  </a>
                 </div>
                 <div class="col-sm">
-                  <img src={Mongodb} alt="" width="100" height="150" />
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.mongodb.com"
+                  >
+                    {" "}
+                    <img src={Mongodb} alt="" width="100" height="150" />
+                  </a>
                 </div>
                 <div class="col-sm">
-                  <img src={Mongoose} alt="" width="100" height="150" />
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://mongoosejs.com/"
+                  >
+                    <img src={Mongoose} alt="" width="100" height="150" />
+                  </a>
                 </div>
                 <div class="col-sm">
-                  <img src={Nodejs} alt="" width="100" height="40" />
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://nodejs.org/en/"
+                  >
+                    <img src={Nodejs} alt="" width="100" height="40" />
+                  </a>
                 </div>
               </div>
               <div className="row align-items-center">
                 <div className="col-sm">
-                  <img src={Bootstrap} alt="" width="100" height="100" />
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://getbootstrap.com/"
+                  >
+                    <img src={Bootstrap} alt="" width="100" height="100" />
+                  </a>
                 </div>
                 <div className="col-sm">
-                  <img src={Html} alt="" width="100" height="100" />
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.w3.org/MarkUp/"
+                  >
+                    <img src={Html} alt="" width="100" height="100" />
+                  </a>
                 </div>
                 <div className="col-sm">
-                  <img src={Css} alt="" width="100" height="100" />
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.w3.org/Style/CSS/Overview.en.html"
+                  >
+                    <img src={Css} alt="" width="100" height="100" />
+                  </a>
                 </div>
                 <div className="col-sm">
-                  <img src={Javascript} alt="" width="100" height="100" />
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.javascript.com/"
+                  >
+                    <img src={Javascript} alt="" width="100" height="100" />
+                  </a>
                 </div>
               </div>
             </div>
