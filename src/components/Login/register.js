@@ -17,19 +17,19 @@ class Register extends React.Component {
 
   handleRegister = event => {
     event.preventDefault();
-    const { password, email, ...otherState } = this.state;
-    console.log(otherState);
+    // const { username, password, email} = this.state;
+    // console.log(otherState);
 
     axios
-      .post(BACKEND_URI + "/users", otherState)
+      .post(BACKEND_URI + "/users", this.state)
       .then(result => {
         console.log(result);
         if (result.status === 200) {
           this.props.history.push("/login&register");
-          Swal("Welcome!", "Register Success", "success");
+          Swal("Welcome to Timepiece!", "Register Success", "success");
         }
         this.setState({
-          name: "",
+          username: "",
           email: "",
           password: ""
         });

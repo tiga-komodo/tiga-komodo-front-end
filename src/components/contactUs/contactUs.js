@@ -56,13 +56,13 @@ export default class contactUs extends Component {
         <div>
           <div className="contact-section">
             <h1>Contact Us</h1>
-            <div className="border"></div>
+            {/* <div className="border"></div>
             {this.state.error && (
               <h1 style={{ position: "absolute" }}>{this.state.error}</h1>
             )}
             {this.state.status && (
               <h1 style={{ position: "absolute" }}>{this.state.status}</h1>
-            )}
+            )} */}
             <form className="contact-form" onSubmit={this.sendMessage}>
               <input
                 type="text"

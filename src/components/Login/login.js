@@ -38,7 +38,7 @@ class Login extends React.Component {
             isLoading: false
           });
         });
-        Swal("Welcome!", "Login Success", "success");
+        Swal("Happy Shopping!", "Login Success", "success");
         history.replace(from);
       })
       .catch(error => {
