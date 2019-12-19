@@ -60,11 +60,19 @@ export default function Navbar() {
 
 const NavWrapper = styled.nav`
   background: var(--mainBlack);
-  .nav-link {
+  .nav-link{
     color: var(--mainWhite) !important;
     font-size: 1rem;
     text-transform: capitalize !important;
   }
+  
+
+  .nav-link:hover{
+    color: #ffa801 !important;
+  }
+
+
+
   @media (max-width: 576px) {
     .navbar-nav {
       flex-direction: row !important;

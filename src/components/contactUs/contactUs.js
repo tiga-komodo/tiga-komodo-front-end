@@ -25,7 +25,12 @@ export default class contactUs extends Component {
     event.preventDefault();
     axios
       .post(BACKEND_URI + "/users/contact-us", this.state)
-      .then(result => console.log(result))
+      .then(result => {
+        console.log(result);
+      })
+      .then(() => {
+        this.setState({ name: "", email: "", phoneNumber: "", message: "" });
+      })
       .catch(error => console.log(error));
   };
 
@@ -68,7 +73,7 @@ export default class contactUs extends Component {
                 name="message"
                 value={this.state.message}
               ></textarea>
-              <input type="submit" className="contact-form-btn" value="send" />
+              <input type="submit" className="contact-form-btn" />
             </form>
           </div>
         </div>
