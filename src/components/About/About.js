@@ -11,6 +11,7 @@ import Javascript from "../../assets/images/javascript.svg";
 import Mongodb from "../../assets/images/mongodb.svg";
 import Mongoose from "../../assets/images/mongoose_logo.svg";
 import Nodejs from "../../assets/images/nodejs.svg";
+import Reactjs from "../../assets/images/react.svg"
 export default class About extends Component {
   render() {
     return (
@@ -185,6 +186,15 @@ export default class About extends Component {
                     href="https://www.javascript.com/"
                   >
                     <img src={Javascript} alt="" width="100" height="100" />
+                  </a>
+                </div>
+                <div className="col-sm">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://reactjs.org/"
+                  >
+                    <img src={Reactjs} alt="" width="100" height="100" />
                   </a>
                 </div>
               </div>
