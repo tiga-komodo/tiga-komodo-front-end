@@ -12,6 +12,7 @@ class ProductProvider extends Component {
     detailProduct: {},
     cart: [],
     modalOpen: false,
+    modalPayment: false,
     modalProduct: {},
     cartSubTotal: 0,
     cartTax: 0,
@@ -32,16 +33,6 @@ class ProductProvider extends Component {
   };
 
   setProducts = () => {
-    // let products = [];
-    // storeProducts.forEach(item => {
-    //   const singleItem = { ...item };
-    //   products = [...products, singleItem];
-    // });
-
-    // this.setState(() => {
-    //   return { products };
-    // }, this.checkCartItems);
-
     axios
       .get(BACKEND_URI + "/products")
       .then(result => {
@@ -101,6 +92,18 @@ class ProductProvider extends Component {
   closeModal = () => {
     this.setState(() => {
       return { modalOpen: false };
+    });
+  };
+
+  openModalPayment = () => {
+    this.setState(() => {
+      return { modalPayment: true };
+    });
+  };
+
+  closeModalPayment = () => {
+    this.setState(() => {
+      return { modalPayment: false };
     });
   };
 
@@ -200,6 +203,11 @@ class ProductProvider extends Component {
     );
   };
 
+  getOrder = id => {
+    const order = this.state.orders.find(item => item._id === id);
+    return order;
+  };
+
   render() {
     return (
       <ProductContext.Provider
@@ -213,8 +221,9 @@ class ProductProvider extends Component {
           increment: this.increment,
           decrement: this.decrement,
           removeItem: this.removeItem,
-          clearCart: this.clearCart
-          //addTotals: this.addTotals
+          clearCart: this.clearCart,
+          openModalPayment: this.openModalPayment,
+          closeModalPayment: this.closeModalPayment
         }}
       >
         {this.props.children}

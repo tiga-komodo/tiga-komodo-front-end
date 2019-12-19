@@ -7,33 +7,6 @@ import { ProductConsumer } from "../context/product";
 import PropTypes from "prop-types";
 
 class Product extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     products: [],
-  //     isLoaded: false,
-  //     error: ""
-  //   };
-  // }
-
-  // componentDidMount() {
-  //   axios
-  //     .get(BACKEND_URI + "/products")
-  //     .then(result => {
-  //       this.setState({
-  //         isLoaded: true,
-  //         products: result.data
-  //       });
-  //       console.log(result);
-  //     })
-  //     .catch(error => {
-  //       this.setState({
-  //         isLoaded: true,
-  //         error: error.message
-  //       });
-  //     });
-  // }
-
   render() {
     const { _id, title, img, price, inCart } = this.props.product;
     console.log(this.props.product);

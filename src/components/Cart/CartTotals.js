@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import styled from "styled-components";
+
 // import PayPalButton from "./PayPalButton";
 import { Link, withRouter } from "react-router-dom";
 import { BACKEND_URI } from "../../helpers/env";
@@ -12,7 +14,8 @@ class CartTotals extends Component {
       cartTotal,
       cart,
       clearCart,
-      user
+      user,
+      modalPayment
     } = this.props.value;
     const { history } = this.props;
     const emptyCart = cart.length === 0 ? true : false;
@@ -23,20 +26,26 @@ class CartTotals extends Component {
       total: cartTotal
     };
 
+    const closeModalPayment = () => {
+      this.setState(() => {
+        return { modalPayment: false };
+      });
+      clearCart();
+      history.push("/");
+    };
+
     const handlePayment = () => {
       axios
         .post(BACKEND_URI + "/orders", order)
         .then(result => {
           console.log(result);
-          clearCart();
-          history.push("/");
+          this.props.value.openModalPayment();
         })
         .catch(error => {
           console.log(error);
         });
     };
 
-    console.log(this.props);
     console.log(order);
     return (
       <React.Fragment>
@@ -68,11 +77,29 @@ class CartTotals extends Component {
                   <strong>$ {cartTotal} </strong>
                 </h5>
                 <button
-                  className="btn btn-outline-danger text-uppercase mb-3 px-5"
+                  type="button"
+                  className="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
                   onClick={handlePayment}
                 >
                   Payment
                 </button>
+
+                {!modalPayment ? null : (
+                  <ModalContainer onClick={closeModalPayment}>
+                    <div className="container">
+                      <div className="row">
+                        <div
+                          className="col-8 mx-auto col-md-6 col-lg-4 p-5 text-center text-capitalize"
+                          id="modal"
+                        >
+                          <h5>Payment Success</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </ModalContainer>
+                )}
               </div>
             </div>
           </div>
@@ -83,3 +110,19 @@ class CartTotals extends Component {
 }
 
 export default withRouter(CartTotals);
+
+const ModalContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  #modal {
+    background: var(--mainWhite);
+  }
+  z-index: 1;
+`;

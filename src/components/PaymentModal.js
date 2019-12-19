@@ -1,36 +1,15 @@
 import React, { Component } from "react";
-import { BACKEND_URI } from "../helpers/env";
-import axios from "axios";
+// import { BACKEND_URI } from "../helpers/env";
+// import axios from "axios";
 
-export default class PaymentModal extends Component {
+class PaymentModal extends Component {
   state = {
-    orders: {},
-    paymentModalOpen: false,
-    modalOrder: {}
+    paymentModalOpen: false
   };
 
-  setOrder = () => {
-    axios
-      .get(BACKEND_URI + "orders")
-      .then(result => {
-        this.setState({
-          orders: result.data
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
-
-  getOrder = id => {
-    const order = this.state.orders.find(item => item._id === id);
-    return order;
-  };
-
-  openPaymentModal = id => {
-    const order = this.getOrder(id);
+  openPaymentModal = () => {
     this.setState(() => {
-      return { modalOrder: order, paymentModalOpen: true };
+      return { paymentModalOpen: true };
     });
   };
 
@@ -77,3 +56,5 @@ export default class PaymentModal extends Component {
     );
   }
 }
+
+export default PaymentModal;

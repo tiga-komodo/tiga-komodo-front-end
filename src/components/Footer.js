@@ -19,15 +19,7 @@ export default class Footer extends Component {
               <li>Call Center</li>
             </ul>
           </div>
-          {/* <div className="col-6 col-md">
-            <h5>Resources</h5>
-            <ul className="list-unstyled text-small">
-              <li>Resource</li>
-              <li>Resource name</li>
-              <li>Another resource</li>
-              <li>Final resource</li>
-            </ul>
-          </div> */}
+
           <div className="col-6 col-md">
             <h5>About Us</h5>
             <ul className="list-unstyled text-small">
@@ -40,6 +32,7 @@ export default class Footer extends Component {
               <li>Career</li>
             </ul>
           </div>
+
           <div className="col-6 col-md">
             <h5>Follow Us</h5>
             <ul className="list-unstyled text-small">
