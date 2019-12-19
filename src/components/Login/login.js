@@ -7,7 +7,7 @@ import { BACKEND_URI } from "../../helpers/env";
 
 import "./style.scss";
 
-const HEROKU_API = process.env.REACT_APP_BACKEND_URI;
+// const HEROKU_API = process.env.REACT_APP_BACKEND_URI;
 
 class Login extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class Login extends React.Component {
     });
 
     axios
-      .post(HEROKU_API + "/users/authenticated", this.state)
+      .post(BACKEND_URI + "/users/authenticated", this.state)
       .then(result => {
         console.log(result);
         this.props.value.addUser(result.data.result);

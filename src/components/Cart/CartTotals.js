@@ -67,7 +67,12 @@ class CartTotals extends Component {
                   <span className="text-title"> total :</span>{" "}
                   <strong>$ {cartTotal} </strong>
                 </h5>
-                <button onClick={handlePayment}>Payment</button>
+                <button
+                  className="btn btn-outline-danger text-uppercase mb-3 px-5"
+                  onClick={handlePayment}
+                >
+                  Payment
+                </button>
               </div>
             </div>
           </div>
@@ -78,7 +83,3 @@ class CartTotals extends Component {
 }
 
 export default withRouter(CartTotals);
-
-// totalAmount={cartTotal}
-//                   clearCart={clearCart}
-//                   history={history}
