@@ -6,6 +6,7 @@ import { clientAuth } from "../../helpers/auth";
 import { BACKEND_URI } from "../../helpers/env";
 
 import "./style.scss";
+import Swal from "sweetalert";
 
 // const HEROKU_API = process.env.REACT_APP_BACKEND_URI;
 
@@ -37,7 +38,7 @@ class Login extends React.Component {
             isLoading: false
           });
         });
-
+        Swal("Welcome!", "Login Success", "success");
         history.replace(from);
       })
       .catch(error => {

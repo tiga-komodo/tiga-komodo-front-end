@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Swal from "sweetalert";
 
 import "./style.scss";
 import { BACKEND_URI } from "../../helpers/env";
@@ -29,6 +30,7 @@ export default class contactUs extends Component {
     axios
       .post(BACKEND_URI + "/users/contact-us", bodyMessage)
       .then(result => {
+        Swal("Message Send", "Thank you", "success");
         this.setState({
           name: "",
           email: "",

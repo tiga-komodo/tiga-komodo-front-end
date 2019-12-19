@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-
+import Swal from "sweetalert";
+import { withRouter } from "react-router-dom";
 import "./style.scss";
 import { BACKEND_URI } from "../../helpers/env";
 
@@ -14,11 +15,29 @@ class Register extends React.Component {
     };
   }
 
-  handleRegister = () => {
+  handleRegister = event => {
+    event.preventDefault();
+    const { password, email, ...otherState } = this.state;
+    console.log(otherState);
+
     axios
-      .post(BACKEND_URI + "/users", this.state)
-      .then(result => console.log(result))
-      .catch(error => console.log(error));
+      .post(BACKEND_URI + "/users", otherState)
+      .then(result => {
+        console.log(result);
+        if (result.status === 200) {
+          this.props.history.push("/login&register");
+          Swal("Welcome!", "Register Success", "success");
+        }
+        this.setState({
+          name: "",
+          email: "",
+          password: ""
+        });
+      })
+      .catch(error => {
+        console.log(error);
+        Swal("Oops", "Username or email not valid", "error");
+      });
   };
 
   handleChange = event => {
@@ -79,4 +98,4 @@ class Register extends React.Component {
   }
 }
 
-export default Register;
+export default withRouter(Register);
